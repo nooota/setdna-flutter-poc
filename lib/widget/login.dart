@@ -9,6 +9,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   double screen;
+  bool statusRedEye = true;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,9 @@ class _LoginState extends State<Login> {
         body: Center(
       child: Column(mainAxisSize: MainAxisSize.min, children: [
         buildLogo(),
-        Container(margin: EdgeInsets.only(top: 30),),
+        Container(
+          margin: EdgeInsets.only(top: 30),
+        ),
         buildUsernameTextField(),
         buildPasswordTextField()
       ]),
@@ -26,26 +29,39 @@ class _LoginState extends State<Login> {
   }
 
   Container buildUsernameTextField() {
-    return Container(width: screen * 0.5, child: TextField(
-      enableSuggestions: false,
-      autocorrect: false,
-      decoration: InputDecoration(
-        prefixIcon: Icon(Icons.perm_identity),
-        hintText: 'Username',
-      ),
-    ));
+    return Container(
+        width: screen * 0.5,
+        child: TextField(
+          enableSuggestions: false,
+          autocorrect: false,
+          decoration: InputDecoration(
+            prefixIcon: Icon(Icons.perm_identity),
+            hintText: 'Username',
+          ),
+        ));
   }
 
   Container buildPasswordTextField() {
-    return Container(width: screen * 0.5, child: TextField(
-      obscureText: true,
-      enableSuggestions: false,
-      autocorrect: false,
-      decoration: InputDecoration(
-        prefixIcon: Icon(Icons.lock_outline),
-        hintText: 'Password',
-      ),
-    ));
+    return Container(
+        width: screen * 0.5,
+        child: TextField(
+          obscureText: statusRedEye,
+          enableSuggestions: false,
+          autocorrect: false,
+          decoration: InputDecoration(
+            prefixIcon: Icon(Icons.lock_outline),
+            suffixIcon: IconButton(
+              icon: Icon(statusRedEye ? Icons.remove_red_eye : Icons.remove),
+              onPressed: () {
+                FocusScope.of(context).requestFocus();
+                setState(() {
+                  statusRedEye = !statusRedEye;
+                });
+              },
+            ),
+            hintText: 'Password',
+          ),
+        ));
   }
 
   Container buildLogo() {
