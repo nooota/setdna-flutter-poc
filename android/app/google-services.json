@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "861427907145",
+    "project_id": "setdna-flutter-poc",
+    "storage_bucket": "setdna-flutter-poc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861427907145:android:253b8a023ffcfefc369d98",
+        "android_client_info": {
+          "package_name": "th.or.set.setdna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861427907145-8ib85nubcgr29if2ko4qui2a8cdkreup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhc7Uyj7xFyaJlregnBsmU7FJlKAOBVz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861427907145-8ib85nubcgr29if2ko4qui2a8cdkreup.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
