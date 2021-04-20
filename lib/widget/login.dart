@@ -37,7 +37,8 @@ class _LoginState extends State<Login> {
           style: ElevatedButton.styleFrom(primary: MyStyle().darkColor),
           onPressed: () {
             print('login pressed');
-            MaterialPageRoute materialPageRoute = MaterialPageRoute(builder: (BuildContext buildContext) => BackBone());
+            MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                builder: (BuildContext buildContext) => BackBone());
             Navigator.of(context).push(materialPageRoute);
           },
           child: Text('Login')));
